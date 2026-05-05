@@ -1,0 +1,16 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+    - vendor/pestphp/pest/extension.neon
+
+parameters:
+    level: 6
+    paths:
+        - app
+        - config
+        - database
+        - routes
+        - tests
+    ignoreErrors:
+        -
+            message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall::(get|post|actingAs|assertAuthenticated|assertGuest)\(\)\.$#'
+            path: tests/*
